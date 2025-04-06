@@ -1,57 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post instagram</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <main>
-        <header>
-            <div class="header-left">
-                <i class="fa-brands fa-html5"></i>
-                <div class="htmlrigo">
-                    <strong>HTML5</strong>
-                    <p>Rigoberto</p>
-                </div>
-                      
-            </div>
-            <div class="header-right">
-                <i class="fa-solid fa-ellipsis-vertical"></i> 
-            </div>
-        </header>
-        <div class="photo">
-            <img src="https://i2.wp.com/hipertextual.com/wp-content/uploads/2014/03/windows_xp_bliss-wide.jpg?fit=1920%2C1200&ssl=1" alt="paisaje">
-        <div class="icons">
-            <div class="icons-left">
-                <i class="fa-regular fa-heart"></i>
-                <i class="fa-regular fa-comment"></i>
-                <i class="fa-regular fa-paper-plane"></i>
-            </div>
-            <div class="icons-right">
-                <i class="fa-regular fa-bookmark"></i>
-            </div>
-        
-        </div>
-        
-        
-        <footer class="liked">
-            <p>Liked by <b>4GeeksAcademy, html5, Web</b> and <b>100.000 others</b></p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro nesciunt ipsam, sequi tempora cum itaque doloremque laudantium doloribus ab temporibus omnis nihil recusandae quod, incidunt asperiores at. Corporis, temporibus cupiditate.</p>
 
-        </footer>
-    </main>
-     
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+            <form class="d-inline p-2" role="search">
+
+
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Create a new post
+                </button>
+
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create a new post</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Caption:</label>
+                                    <textarea class="form-control" id="message-text"
+                                        placeholder="Add the caption here"></textarea>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-light"><i
+                                            class="fa-solid fa-camera"></i></button>
+                                    <button type="button" class="btn btn-light"><i
+                                            class="fa-solid fa-location-dot"></i></button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button class="dropdown-item" type="button">Profile</button></li>
+                    <li><button class="dropdown-item" type="button">Accesibility</button></li>
+                    <li><button class="dropdown-item" type="button">Privacy and Data</button></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                </ul>
+            </form>
+        </div>
+
+    </nav>
+    <!-- Botones -->
+    <nav>
+        <div class="nav nav-tabs border-0 d-flex justify-content-center" id="nav-tab" role="tablist">
+            <button class="nav-link active border-0 shadow-none" id="nav-home-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
+                    class="fa-solid fa-table-cells"></i></button>
+            <button class="nav-link border-0 shadow-none" id="nav-profile-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                aria-selected="false"><i class="fa-solid fa-square"></i></button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
+                <!-- Cuadricula -->
+                <div class="card-group">
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/fiesta-divertida-dj_23-2151108197.jpg?t=st=1743715508~exp=1743719108~hmac=d0c67a1ac62167c501ac4abc8e1b061b5b935fe120a37f41e0c37f2c667df6f0&w=996"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/vista-superior-pirata-informatico-irreconocible-que-realiza-ciberataque-noche_1098-18706.jpg?t=st=1743715790~exp=1743719390~hmac=1bdf14999bb258ed4d40506e59fdc655e80fc3dbf990e751aa2225448a142d28&w=740"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/arreglo-piramide-alimenticia-real-bodegon_23-2150238979.jpg?t=st=1743716405~exp=1743720005~hmac=a6e0fa21fe0e6705ad14e1c394d0b4d794dabb2f493a5161c073a71f7601a826&w=740"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                </div>
+                <div class="card-group">
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-rio-rodeado-montanas-prados-escocia_181624-27881.jpg?t=st=1743716465~exp=1743720065~hmac=f7b6cd6c2bd7d1ec75db9253c3759c76cc81d457e8d84ccf480e5c193d55edaa&w=740"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/herramientas-deportivas_53876-138077.jpg?t=st=1743716530~exp=1743720130~hmac=1755fc6db05d8cbb7e2a51726d85bc16cd6a9adfd5ce3386f13a750f5cf708c1&w=996"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/foto-linea-produccion-automoviles-soldadura-carrocerias-automoviles-planta-ensamblaje-automoviles-moderna-industria-automotriz_645730-133.jpg?t=st=1743716601~exp=1743720201~hmac=fa783fa0cce5126b6f232df333d637346235c41bfc7a1b067d32c840567efe2c&w=900"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                </div>
+
+                <div class="card-group">
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/oficinistas-trabajando-juntos-como-equipo_23-2149310906.jpg?t=st=1743716628~exp=1743720228~hmac=18a0578b5d0246db69e0e5f1de57ea2f0a095459fd838a5de00f606fd5815545&w=996"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/concepto-educacion-estudiante-estudiar-brainstorming-campus-concepto-cerca-estudiantes-que-discuten-su-tema-libros-o-libros-texto-enfoque-selectivo_1418-627.jpg?t=st=1743716650~exp=1743720250~hmac=a8600034e8ef79ae342ca77cf3d01bb347a8a17fc67af57277aca4251ff66320&w=996"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/foto-gratis/fondo-textura-hoja-verde_501050-120.jpg?t=st=1743716724~exp=1743720324~hmac=1c4d864fabef71c16e32c6102c9753ecce98911cdbe96709d2a0152d7f7d16a3&w=996"
+                            class="img-square w-100" alt="User photo">
+                    </div>
+                </div>
+                <!-- Plantilla -->
+                <!-- <div class="card-group">
+                <div class="card">
+                  <img src="..." class="img-square w-100" alt="User photo">
+                </div>
+                <div class="card">
+                  <img src="..." class="img-square w-100" alt="User photo">
+                </div>
+                <div class="card">
+                  <img src="..." class="img-square w-100" alt="User photo">
+                </div>
+            </div> -->
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                <!-- Columna -->
+                <div class="d-flex flex-column mx-5">
+                    <!-- Foto1  -->
+                    <div class="card mx-5 m-3">
+
+                        <div class="card-header d-flex justify-content-between">
+                            <div>DJ Session</div>
+                            <div>17/12</div>
+                        </div>
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://img.freepik.com/foto-gratis/fiesta-divertida-dj_23-2151108197.jpg?t=st=1743715508~exp=1743719108~hmac=d0c67a1ac62167c501ac4abc8e1b061b5b935fe120a37f41e0c37f2c667df6f0&w=996"
+                                        class="card-img-top img-fluid" class="d-block w-100" alt="foto1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://img.freepik.com/foto-gratis/fiesta-divertida-dj_23-2151108172.jpg?t=st=1743789682~exp=1743793282~hmac=c99b7a411d90d20cc3190f8e6fac4b2d57fe4728f40889c6ea106bb839931fff&w=996"
+                                        class="d-block w-100" alt="foto2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://img.freepik.com/foto-gratis/fiesta-divertida-dj_23-2151108168.jpg?t=st=1743789754~exp=1743793354~hmac=75a01f43f14edd5f42dd61f95263b1cfa3179be1b9e0ff18f48c5e8202f05076&w=996"
+                                        class="d-block w-100" alt="foto3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- Botones -->
+
+                        <div class="d-flex justify-content-between px-2">
+                            <div>
+                                <!-- like -->
+                                <button class="btn p-0 border-0 me-2 shadow-none" type="button">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                                <!-- comment -->
+                                <button type="button" class="btn p-0 border-0 shadow-none" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i
+                                        class="fa-regular fa-comment"></i></button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">New comment</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="message-text"
+                                                            class="col-form-label">Comment:</label>
+                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Send comment</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- send -->
+                                <button class="btn p-0 border-0 ms-2 shadow-none" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#SendModal" data-bs-whatever="@mdo">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </button>
+                                <div class="modal fade" id="SendModal" tabindex="-1" aria-labelledby="SendModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Send to:</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <ul class="list-group">
+                                                            <li
+                                                                class="list-group-item d-flex justify-content-between align-items-center">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img class="rounded-circle me-2"
+                                                                        src="https://preview.redd.it/kinda-late-to-this-but-managed-to-make-a-younger-trevor-and-v0-ucnzoamvuqc91.jpg?width=640&crop=smart&auto=webp&s=8286274395ed4d6346fe27ecd05ade2bfe1edfa3"
+                                                                        alt="Trevor" style="height: 1.5em;">
+                                                                    <label class="form-check-label mb-0"
+                                                                        for="firstRadio">Trevor</label>
+                                                                </div>
+                                                                <input class="form-check-input me-1" type="checkbox"
+                                                                    name="listGroupRadio" value="" id="firstRadio"
+                                                                    checked>
+                                                            </li>
+                                                            <li
+                                                                class="list-group-item d-flex justify-content-between align-items-center">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img class="rounded-circle me-2"
+                                                                        src="https://static.wikia.nocookie.net/gtawiki/images/a/a8/MichaelDeSanta-GTAVee.png/revision/latest/scale-to-width-down/1000?cb=20220318234033"
+                                                                        alt="Michael" style="height: 1.5em;">
+                                                                    <label class="form-check-label mb-0"
+                                                                        for="firstRadio">Michael</label>
+                                                                </div>
+                                                                <input class="form-check-input me-1" type="checkbox"
+                                                                    name="listGroupRadio" value="" id="firstRadio"
+                                                                    checked>
+                                                            </li>
+                                                            <li
+                                                                class="list-group-item d-flex justify-content-between align-items-center">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img class="rounded-circle me-2"
+                                                                        src="https://static.wikia.nocookie.net/gtawiki/images/c/ce/FranklinClinton-GTAVe-InGame.png/revision/latest?cb=20211229190759"
+                                                                        alt="Franklin" style="height: 1.5em;">
+                                                                    <label class="form-check-label mb-0"
+                                                                        for="firstRadio">Franklin</label>
+                                                                </div>
+                                                                <input class="form-check-input me-1" type="checkbox"
+                                                                    name="listGroupRadio" value="" id="firstRadio"
+                                                                    checked>
+                                                            </li>
+                                                            <li
+                                                                class="list-group-item d-flex justify-content-between align-items-center">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img class="rounded-circle me-2"
+                                                                        src="https://static.wikia.nocookie.net/aztecakgames/images/2/21/NikoLiberty.jpg/revision/latest?cb=20120415145900&path-prefix=es"
+                                                                        alt="Niko" style="height: 1.5em;">
+                                                                    <label class="form-check-label mb-0"
+                                                                        for="firstRadio">Niko</label>
+                                                                </div>
+                                                                <input class="form-check-input me-1" type="checkbox"
+                                                                    name="listGroupRadio" value="" id="firstRadio"
+                                                                    checked>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary">Send Post</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- bookmark -->
+
+                            <button type="button" class="btn p-0 border-0 shadow-none" data-bs-toggle="modal"
+                                data-bs-target="#BookmarkModal" data-bs-whatever="@mdo"><i
+                                    class="fa-regular fa-bookmark"></i></button>
+                            <div class="modal fade" id="BookmarkModal" tabindex="-1"
+                                aria-labelledby="BookmarkModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="BookmarkModalLabel">Saved!</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <h5 class="card-title p-2">850 Likes</h5>
+                        <p class="card-text p-2">Profe, traté de darle funcionalidad a los botones, pero no pude cambiar
+                            el like a rojo solo con bootstrap, los demás botones si funcionan =)</p>
+                    </div>
+                    <!-- foto2 -->
+                    <div class="card mx-5 m-3">
+                        <div>
+                            <div class="card-header d-flex justify-content-between">
+                                <div>Codeando</div>
+                                <div>2/12</div>
+                            </div>
+                            <img src="https://img.freepik.com/foto-gratis/vista-superior-pirata-informatico-irreconocible-que-realiza-ciberataque-noche_1098-18706.jpg?t=st=1743715790~exp=1743719390~hmac=1bdf14999bb258ed4d40506e59fdc655e80fc3dbf990e751aa2225448a142d28&w=740" class="card-img-top" alt="User photo">
+                            
+                            <div class="card-body">
+                    
+    
+                                <h5 class="card-title p-2">18000 Likes</h5>
+                                <p class="card-text p-2">No puse botones en las demas fotos porque iba a ser muchísimo codigo a lo loco</p>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <!-- foto3 -->
+                    <div class="card mx-5 m-3">
+                        <div>
+                            <div class="card-header d-flex justify-content-between">
+                                <div>Aguacate</div>
+                                <div>29/11</div>
+                            </div>
+                            <img src="https://img.freepik.com/foto-gratis/arreglo-piramide-alimenticia-real-bodegon_23-2150238979.jpg?t=st=1743716405~exp=1743720005~hmac=a6e0fa21fe0e6705ad14e1c394d0b4d794dabb2f493a5161c073a71f7601a826&w=740" class="card-img-top" alt="User photo">
+                            
+                            <div class="card-body">
+                    
+    
+                                <h5 class="card-title p-2">5890 Likes</h5>
+                                <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi molestiae
+                            doloremque maxime aperiam minima veritatis, nam earum eos voluptatem dolorem, accusantium,
+                            praesentium impedit ipsa atque distinctio tempora doloribus excepturi quo.</p>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <!-- foto4 -->
+                    <div class="card mx-5 m-3">
+                        <div>
+                            <div class="card-header d-flex justify-content-between">
+                                <div>Viaje Islandia</div>
+                                <div>15/11</div>
+                            </div>
+                            <img src="https://img.freepik.com/foto-gratis/disparo-vertical-rio-rodeado-montanas-prados-escocia_181624-27881.jpg?t=st=1743716465~exp=1743720065~hmac=f7b6cd6c2bd7d1ec75db9253c3759c76cc81d457e8d84ccf480e5c193d55edaa&w=740" class="card-img-top" alt="User photo">
+                            
+                            <div class="card-body">
+                    
+    
+                                <h5 class="card-title p-2">156456 Likes</h5>
+                                <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi molestiae
+                            doloremque maxime aperiam minima veritatis, nam earum eos voluptatem dolorem, accusantium,
+                            praesentium impedit ipsa atque distinctio tempora doloribus excepturi quo.</p>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    
+                    
+
+                    <!-- Plantilla card -->
+                    <!-- <div class="card mx-5 m-3">
+                    <div>
+                        <div class="card-header d-flex justify-content-between">
+                            <div>1</div>
+                            <div>2</div>
+                        </div>
+                        <img src="" class="card-img-top" alt="User photo">
+                        
+                        <div class="card-body">
+                
+
+                            <h5 class="card-title p-2">Likes</h5>
+                            <p class="card-text p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi molestiae
+                        doloremque maxime aperiam minima veritatis, nam earum eos voluptatem dolorem, accusantium,
+                        praesentium impedit ipsa atque distinctio tempora doloribus excepturi quo.</p>
+                        </div>
+                    </div>
+
+
+                </div> -->
+                    <!-- Plantilla carrusel
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
